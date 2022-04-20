@@ -1,40 +1,28 @@
-import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import React, { useState } from 'react';
+import { ChakraProvider, theme } from '@chakra-ui/react';
+import Nav from './Components/Nav';
+import Content from './Components/Content';
 
 function App() {
+  const [broadcastMember, setBroadcastMember] = useState(1);
+  const [broadcastMemberList, setBroadcastMemberList] = useState(['vnek1234']);
+  const [selectedUser, setSelectedUser] = useState([
+    'vnek1234',
+    'kimc6h12o6',
+    'gamjagabee',
+  ]);
+
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+      <Nav
+        data={{
+          selectedUser,
+          setSelectedUser,
+          broadcastMember,
+          broadcastMemberList,
+        }}
+      ></Nav>
+      <Content data={{ selectedUser, broadcastMember }}></Content>
     </ChakraProvider>
   );
 }
