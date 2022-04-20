@@ -5,12 +5,11 @@ import Content from './Components/Content';
 
 function App() {
   const [broadcastMember, setBroadcastMember] = useState(1);
-  const [broadcastMemberList, setBroadcastMemberList] = useState(['vnek1234']);
-  const [selectedUser, setSelectedUser] = useState([
+  const [broadcastMemberList, setBroadcastMemberList] = useState([
     'vnek1234',
-    'kimc6h12o6',
     'gamjagabee',
   ]);
+  const [selectedUser, setSelectedUser] = useState(['vnek1234', 'gamjagabee']);
 
   return (
     <ChakraProvider theme={theme}>

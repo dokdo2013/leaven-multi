@@ -33,7 +33,12 @@ export default function Content({ data }) {
                   <GridItem
                     w="100%"
                     h="100%"
-                    colSpan={data.selectedUser.length === ++currCnt ? 2 : 1}
+                    colSpan={
+                      data.selectedUser.length === ++currCnt ||
+                      data.selectedUser.length <= 2
+                        ? 2
+                        : 1
+                    }
                   >
                     <iframe
                       title="embed"
