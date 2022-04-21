@@ -90,7 +90,7 @@ export default function Content({ data }) {
       bg={useColorModeValue('gray.100', 'gray.900')}
       style={{ display: 'flex', justifyContent: 'space-between' }}
     >
-      {data.broadcastMemberList.length ? (
+      {data.selectedUser.length ? (
         <>
           <Box
             style={{
