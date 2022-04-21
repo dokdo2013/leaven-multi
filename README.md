@@ -1,68 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LEAVEN Multi Twitch
+트위치/유튜브 커버츄얼 팀 '레븐(LEAVEN)' 멤버별 방송을 동시에 시청할 수 있는 멀티 트위치 웹사이트 ([https://multi.leaven.team](https://multi.leaven.team))
 
-## Available Scripts
+## 제작동기
+기존 멀티트위치 사이트들(멀티트위치, 멀티스트림 등)은 멤버 10명 방송을 쉽게 선택해서 볼 수 없었고, UI/UX 면에서 비효율적인 부분이 있어 이를 개선하기 위해 별도 사이트로 제작했다.
 
-In the project directory, you can run:
+## Tech Stack
+- React.js
+- Chakra UI
+- Python (API)
 
-### `npm start`
+## 라이센스 고지 (License Notice)
+트위치 생방송 진행 중임을 체크하는 코드는 [LeftBased/StreamLiveChecker](https://github.com/LeftBased/StreamLiveChecker)를 이용했습니다.
+<br>
+We used [LeftBased/StreamLiveChecker](https://github.com/LeftBased/StreamLiveChecker) for checking twitch live streaming.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
