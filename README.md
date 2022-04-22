@@ -14,3 +14,15 @@
 <br>
 We used [LeftBased/StreamLiveChecker](https://github.com/LeftBased/StreamLiveChecker) for checking twitch live streaming.
 
+## 실행 방법
+- 패키지 설치 후 실행
+```bash
+yarn
+yarn start
+```
+- 빌드
+```bash
+yarn build
+```
+- 배포 : Github Webhook to Jenkins (Build & Deploy to S3)
+
