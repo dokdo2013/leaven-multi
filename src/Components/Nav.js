@@ -1,12 +1,31 @@
 import {
   Box,
+  Badge,
+  Button,
   Flex,
   Avatar,
   AvatarBadge,
   useColorModeValue,
+  Image,
+  useDisclosure,
 } from '@chakra-ui/react';
+import { SettingsIcon, LinkIcon } from '@chakra-ui/icons';
+import SettingsModal from './SettingsModal';
+import LinkModal from './LinkModal';
 
 export default function Nav({ data }) {
+  // Modal Disclosure
+  const {
+    isOpen: linkIsOpen,
+    onOpen: linkOnOpen,
+    onClose: linkOnClose,
+  } = useDisclosure();
+  const {
+    isOpen: settingsIsOpen,
+    onOpen: settingsOnOpen,
+    onClose: settingsOnClose,
+  } = useDisclosure();
+
   const changeSelect = member => {
     if (data.selectedUser.indexOf(member) === -1) {
       // 선택 안 되어있으면 선택 상태로 변경
@@ -25,8 +44,26 @@ export default function Nav({ data }) {
 
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        {/* <Box bg="gray.100" px={4}> */}
+      <Box
+        bg={useColorModeValue('gray.100', 'gray.900')}
+        px={4}
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <LinkModal isOpen={linkIsOpen} onClose={linkOnClose} />
+        <SettingsModal isOpen={settingsIsOpen} onClose={settingsOnClose} />
+        <Flex alignItems="center">
+          <Image src="../../leaven.png" h={12} />
+          <Badge
+            colorScheme="blackAlpha"
+            style={{ fontSize: '14px', marginLeft: '6px' }}
+          >
+            MULTI
+          </Badge>
+        </Flex>
         <Flex justifyContent={'center'} style={{ overflow: 'auto' }}>
           <Avatar
             m={2}
@@ -247,6 +284,14 @@ export default function Nav({ data }) {
               <AvatarBadge boxSize="1em" bg="red.500" />
             )}
           </Avatar>
+        </Flex>
+        <Flex>
+          <Button p={0} onClick={linkOnOpen}>
+            <LinkIcon color="gray.400" />
+          </Button>
+          <Button p={0} onClick={settingsOnOpen}>
+            <SettingsIcon color="gray.400" />
+          </Button>
         </Flex>
       </Box>
     </>
