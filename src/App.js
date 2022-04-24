@@ -3,6 +3,7 @@ import { ChakraProvider, theme } from '@chakra-ui/react';
 import Nav from './Components/Nav';
 import Content from './Components/Content';
 import axios from 'axios';
+import * as Sentry from '@sentry/react';
 
 function App() {
   const [broadcastMember, setBroadcastMember] = useState(1);
@@ -14,15 +15,20 @@ function App() {
   }, []);
 
   const loadApi = () => {
-    axios.get('https://api.c6h12o6.kr/leaven').then(Response => {
-      console.log(Response.data);
-      if (Response.data.code === 'SUCCESS') {
-        setBroadcastMemberList(Response.data.data);
-        setSelectedUser(Response.data.data);
-      } else if (Response.data.code === 'DATA_EMPTY') {
-        console.log('dd');
-      }
-    });
+    axios
+      .get('https://api.c6h12o6.kr/leaven')
+      .then(Response => {
+        console.log(Response.data);
+        if (Response.data.code === 'SUCCESS') {
+          setBroadcastMemberList(Response.data.data);
+          setSelectedUser(Response.data.data);
+        } else {
+          // Sentry 작업 필요
+        }
+      })
+      .catch(e => {
+        Sentry.captureException(e);
+      });
   };
 
   return (
