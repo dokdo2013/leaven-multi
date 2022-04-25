@@ -21,6 +21,8 @@ export default function Content({ data }) {
         return '슬요';
       case 'vnek1234':
         return '도란';
+      case 'kiwi4381':
+        return '키위';
       case 'kbs9981':
         return '병살';
       case 'adricham':
@@ -33,6 +35,8 @@ export default function Content({ data }) {
         return '지야';
       case 'kimc6h12o6':
         return '도당';
+      case 'nyangoooong':
+        return '권냥';
       default:
         return '';
     }
@@ -81,6 +85,13 @@ export default function Content({ data }) {
     templateRows = 'repeat(3, 1fr)';
     templateColumns = 'repeat(4, 1fr)';
     lastOne = 2;
+  } else if (data.selectedUser.length === 11) {
+    templateRows = 'repeat(3, 1fr)';
+    templateColumns = 'repeat(4, 1fr)';
+    lastOne = 2;
+  } else if (data.selectedUser.length === 12) {
+    templateRows = 'repeat(3, 1fr)';
+    templateColumns = 'repeat(4, 1fr)';
   }
   let currCnt = 0;
 
@@ -121,7 +132,7 @@ export default function Content({ data }) {
                       src={
                         'https://player.twitch.tv/?muted=true&channel=' +
                         user +
-                        '&parent=localhost&parent=multi.leaven.team'
+                        '&parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team'
                       }
                       class="stream"
                       allowFullScreen="true"
@@ -171,7 +182,7 @@ export default function Content({ data }) {
                 src={
                   'https://twitch.tv/embed/' +
                   chatUser +
-                  '/chat?parent=localhost&parent=multi.leaven.team'
+                  '/chat?parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team'
                 }
                 height="100%"
                 width="100%"

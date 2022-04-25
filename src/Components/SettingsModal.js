@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertIcon,
   Tabs,
   TabList,
   Tab,
@@ -8,6 +10,9 @@ import {
   Badge,
   Divider,
   Modal,
+  Flex,
+  Switch,
+  Select,
   Link,
   Text,
   ModalOverlay,
@@ -18,7 +23,7 @@ import {
   ModalFooter,
 } from '@chakra-ui/react';
 
-const SettingsModal = ({ isOpen, onClose }) => {
+const SettingsModal = ({ isOpen, onClose, data }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <ModalOverlay />
@@ -29,6 +34,7 @@ const SettingsModal = ({ isOpen, onClose }) => {
           <Tabs variant="soft-rounded" size="sm" colorScheme="purple">
             <TabList flexWrap="wrap">
               <Tab>Grid 설정</Tab>
+              <Tab>설정</Tab>
               <Tab>실험실 (Beta)</Tab>
               <Tab>업데이트 기록</Tab>
               <Tab>쿠키 정책</Tab>
@@ -36,16 +42,144 @@ const SettingsModal = ({ isOpen, onClose }) => {
             </TabList>
             <Divider mt={2}></Divider>
             <TabPanels>
-              <TabPanel>현재 준비 중입니다.</TabPanel>
-              <TabPanel>현재 준비 중입니다.</TabPanel>
+              <TabPanel>
+                <Text mt="6" align="center">
+                  Grid 기능 제공 준비 중입니다.
+                </Text>
+
+                {/* <Flex
+                  style={{
+                    backgroundColor: '',
+                    width: '100px',
+                    height: '100px',
+                  }}
+                >
+                  <Flex
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      margin: '10%',
+                      backgroundColor: 'lightgrey',
+                    }}
+                  ></Flex>
+
+                  <Flex
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      margin: '10%',
+                      backgroundColor: 'lightgrey',
+                    }}
+                  ></Flex>
+
+                  <Flex
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      margin: '10%',
+                      backgroundColor: 'lightgrey',
+                    }}
+                  ></Flex>
+                </Flex> */}
+              </TabPanel>
+              <TabPanel>
+                <Text fontSize="lg" fontWeight="bold" mb="4">
+                  기본 기능
+                </Text>
+                <Flex flexWrap="wrap">
+                  <Flex
+                    ml="6"
+                    mb="4"
+                    style={{ width: '100%' }}
+                    alignItems="center"
+                    justifyContent="space-between"
+                  >
+                    <Text fontSize="md">부캐 보이기 (키위골드, 권냥냥)</Text>
+                    <Switch
+                      size="lg"
+                      style={{ display: 'flex' }}
+                      colorScheme="purple"
+                      defaultValue={true}
+                      isChecked={data.useSubCharacter}
+                      onChange={() => {
+                        const changeData = data.useSubCharacter
+                          ? 'false'
+                          : 'true';
+                        data.setUseSubCharacter(!data.useSubCharacter);
+                        localStorage.setItem(
+                          'setting-useSubCharacter',
+                          changeData
+                        );
+                      }}
+                    />
+                  </Flex>
+                  {/* <Flex
+                    ml="6"
+                    mb="4"
+                    style={{ width: '100%' }}
+                    alignItems="center"
+                    justifyContent="space-between"
+                  >
+                    <Text fontSize="md">
+                      멤버별 선택시 테두리 테마색상으로 설정
+                    </Text>
+                    <Switch
+                      size="lg"
+                      style={{ display: 'flex' }}
+                      colorScheme="purple"
+                      defaultValue={true}
+                      // isChecked={parseInt(data.useCopy) === 1}
+                      onChange={() => {
+                        // const changeData = data.useCopy === 1 ? 0 : 1;
+                        // data.setUseCopy(changeData);
+                        // localStorage.setItem('setting_use_copy', changeData);
+                        // changeSuccess();
+                      }}
+                    />
+                  </Flex> */}
+                </Flex>
+                {/* <Text fontSize="lg" fontWeight="bold" mb="4" mt="4">
+                  테마 색상 설정
+                </Text>
+                <Flex flexWrap="wrap" ml="6">
+                  <Button
+                    mr={3}
+                    className="color-selected"
+                    colorScheme="blue"
+                  ></Button>
+                  <Button mr={3} colorScheme="gray"></Button>
+                  <Button mr={3} colorScheme="green"></Button>
+                  <Button mr={3} colorScheme="yellow"></Button>
+                  <Button mr={3} colorScheme="orange"></Button>
+                  <Button mr={3} colorScheme="red"></Button>
+                  <Button mr={3} colorScheme="cyan"></Button>
+                  <Button mr={3} colorScheme="purple"></Button>
+                  <Button mr={3} colorScheme="pink"></Button>
+                </Flex> */}
+              </TabPanel>
+              <TabPanel>
+                <Alert status="warning" fontSize="sm">
+                  <AlertIcon />
+                  실험실 기능을 통해 정식 기능 오픈 전 미리 신규 기능을
+                  사용해보실 수 있습니다. 실험실 기능은 불안정하여 서비스 오류를
+                  유발할 수 있으며, 예고없이 추가/삭제 될 수 있습니다.
+                </Alert>
+                <Text mt="6" align="center">
+                  현재 이용 가능한 기능이 없습니다.
+                </Text>
+              </TabPanel>
               <TabPanel>
                 <Text>
                   현재 버전 :{' '}
                   <Badge size="xl" colorScheme="gray">
-                    0.1.1
+                    0.1.2
                   </Badge>
                 </Text>
                 <br />
+                <Text>
+                  <Badge>0.1.2</Badge> 생방송 API 호출 속도 개선, 부캐 보이기
+                  기능 추가 (2022.04.26)
+                </Text>
                 <Text>
                   <Badge>0.1.1</Badge> 상단 Navigation Bar 기능 추가
                   (2022.04.23)

@@ -8,10 +8,23 @@ function App() {
   const [broadcastMember, setBroadcastMember] = useState(1);
   const [broadcastMemberList, setBroadcastMemberList] = useState([]);
   const [selectedUser, setSelectedUser] = useState([]);
+  const [useSubCharacter, setUseSubCharacter] = useState(true);
 
   useEffect(() => {
     loadApi();
+    loadStorage();
   }, []);
+
+  const loadStorage = () => {
+    const localUseSubCharacter = localStorage.getItem(
+      'setting-useSubCharacter'
+    );
+    if (localUseSubCharacter === 'true') {
+      setUseSubCharacter(true);
+    } else {
+      setUseSubCharacter(false);
+    }
+  };
 
   const loadApi = () => {
     axios.get('https://api.c6h12o6.kr/leaven').then(Response => {
@@ -33,6 +46,8 @@ function App() {
           setSelectedUser,
           broadcastMember,
           broadcastMemberList,
+          useSubCharacter,
+          setUseSubCharacter,
         }}
       ></Nav>
       <Content data={{ selectedUser, broadcastMemberList }}></Content>
