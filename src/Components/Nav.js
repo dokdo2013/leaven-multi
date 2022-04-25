@@ -54,7 +54,11 @@ export default function Nav({ data }) {
         }}
       >
         <LinkModal isOpen={linkIsOpen} onClose={linkOnClose} />
-        <SettingsModal isOpen={settingsIsOpen} onClose={settingsOnClose} />
+        <SettingsModal
+          isOpen={settingsIsOpen}
+          onClose={settingsOnClose}
+          data={data}
+        />
         <Flex alignItems="center">
           <Image src="../../leaven.png" h={12} />
           <Badge
@@ -152,6 +156,30 @@ export default function Nav({ data }) {
               <AvatarBadge boxSize="1em" bg="red.500" />
             )}
           </Avatar>
+          {data.useSubCharacter && (
+            <Avatar
+              m={2}
+              name="키 위"
+              src="https://static-cdn.jtvnw.net/jtv_user_pictures/1e3b35ac-096d-44dd-975c-cb0c709e0995-profile_image-70x70.png"
+              onClick={() => {
+                changeSelect('kiwi4381');
+              }}
+              style={
+                data.selectedUser.indexOf('kiwi4381') !== -1
+                  ? {
+                      outline: '4px solid orange',
+                      padding: '1px',
+                      background: 'rgb(237, 242, 247)',
+                      cursor: 'pointer',
+                    }
+                  : { cursor: 'pointer' }
+              }
+            >
+              {data.broadcastMemberList.indexOf('kiwi4381') !== -1 && (
+                <AvatarBadge boxSize="1em" bg="red.500" />
+              )}
+            </Avatar>
+          )}
           <Avatar
             m={2}
             name="병 살"
@@ -284,6 +312,30 @@ export default function Nav({ data }) {
               <AvatarBadge boxSize="1em" bg="red.500" />
             )}
           </Avatar>
+          {data.useSubCharacter && (
+            <Avatar
+              m={2}
+              name="권 냥"
+              src="https://static-cdn.jtvnw.net/jtv_user_pictures/31774c9f-2650-438e-818e-e8dc4135573f-profile_image-70x70.png"
+              onClick={() => {
+                changeSelect('nyangoooong');
+              }}
+              style={
+                data.selectedUser.indexOf('nyangoooong') !== -1
+                  ? {
+                      outline: '4px solid orange',
+                      padding: '1px',
+                      background: 'rgb(237, 242, 247)',
+                      cursor: 'pointer',
+                    }
+                  : { cursor: 'pointer' }
+              }
+            >
+              {data.broadcastMemberList.indexOf('nyangoooong') !== -1 && (
+                <AvatarBadge boxSize="1em" bg="red.500" />
+              )}
+            </Avatar>
+          )}
         </Flex>
         <Flex>
           <Button p={0} onClick={linkOnOpen}>
