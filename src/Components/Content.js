@@ -104,10 +104,17 @@ export default function Content({ data }) {
       {data.selectedUser.length ? (
         <>
           <Box
-            style={{
-              width: 'calc(100vw - 310px)',
-              height: 'calc(100vh - 64px)',
-            }}
+            style={
+              data.hideChat
+                ? {
+                    width: '100vw',
+                    height: 'calc(100vh - 64px)',
+                  }
+                : {
+                    width: 'calc(100vw - 310px)',
+                    height: 'calc(100vh - 64px)',
+                  }
+            }
           >
             <Grid
               templateRows={templateRows}
@@ -146,7 +153,7 @@ export default function Content({ data }) {
               })}
             </Grid>
           </Box>
-          {data.selectedUser.length !== 0 && (
+          {data.selectedUser.length !== 0 && !data.hideChat && (
             <Box
               style={{
                 height:

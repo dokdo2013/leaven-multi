@@ -99,7 +99,7 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                       size="lg"
                       style={{ display: 'flex' }}
                       colorScheme="purple"
-                      defaultValue={true}
+                      defaultValue={false}
                       isChecked={data.useSubCharacter}
                       onChange={() => {
                         const changeData = data.useSubCharacter
@@ -110,6 +110,27 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                           'setting-useSubCharacter',
                           changeData
                         );
+                      }}
+                    />
+                  </Flex>
+                  <Flex
+                    ml="6"
+                    mb="4"
+                    style={{ width: '100%' }}
+                    alignItems="center"
+                    justifyContent="space-between"
+                  >
+                    <Text fontSize="md">채팅창 가리기</Text>
+                    <Switch
+                      size="lg"
+                      style={{ display: 'flex' }}
+                      colorScheme="purple"
+                      defaultValue={false}
+                      isChecked={data.hideChat}
+                      onChange={() => {
+                        const changeData = data.hideChat ? 'false' : 'true';
+                        data.setHideChat(!data.hideChat);
+                        localStorage.setItem('setting-hideChat', changeData);
                       }}
                     />
                   </Flex>
@@ -172,10 +193,14 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                 <Text>
                   현재 버전 :{' '}
                   <Badge size="xl" colorScheme="gray">
-                    0.1.2
+                    0.1.3
                   </Badge>
                 </Text>
                 <br />
+                <Text>
+                  <Badge>0.1.3</Badge> 멤버별 테마색상 테두리 적용, 채팅창
+                  가리기 기능 추가 (2022.04.26)
+                </Text>
                 <Text>
                   <Badge>0.1.2</Badge> 생방송 API 호출 속도 개선, 부캐 보이기
                   기능 추가 (2022.04.26)
