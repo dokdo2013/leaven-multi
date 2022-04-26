@@ -79,7 +79,7 @@ export default function Nav({ data }) {
             style={
               data.selectedUser.indexOf('gamjagabee') !== -1
                 ? {
-                    outline: '4px solid orange',
+                    outline: '4px solid #6AB781',
                     padding: '1px',
                     background: 'rgb(237, 242, 247)',
                     cursor: 'pointer',
@@ -101,7 +101,7 @@ export default function Nav({ data }) {
             style={
               data.selectedUser.indexOf('gunaguna00') !== -1
                 ? {
-                    outline: '4px solid orange',
+                    outline: '4px solid #6B6FB3',
                     padding: '1px',
                     background: 'rgb(237, 242, 247)',
                   }
@@ -122,7 +122,7 @@ export default function Nav({ data }) {
             style={
               data.selectedUser.indexOf('beadyo97') !== -1
                 ? {
-                    outline: '4px solid orange',
+                    outline: '4px solid #B8DEC1',
                     padding: '1px',
                     background: 'rgb(237, 242, 247)',
                     cursor: 'pointer',
@@ -144,7 +144,7 @@ export default function Nav({ data }) {
             style={
               data.selectedUser.indexOf('vnek1234') !== -1
                 ? {
-                    outline: '4px solid orange',
+                    outline: '4px solid #FCB581',
                     padding: '1px',
                     background: 'rgb(237, 242, 247)',
                     cursor: 'pointer',
@@ -167,7 +167,7 @@ export default function Nav({ data }) {
               style={
                 data.selectedUser.indexOf('kiwi4381') !== -1
                   ? {
-                      outline: '4px solid orange',
+                      outline: '4px solid #FCB581',
                       padding: '1px',
                       background: 'rgb(237, 242, 247)',
                       cursor: 'pointer',
@@ -190,7 +190,7 @@ export default function Nav({ data }) {
             style={
               data.selectedUser.indexOf('kbs9981') !== -1
                 ? {
-                    outline: '4px solid orange',
+                    outline: '4px solid #EFB1FF',
                     padding: '1px',
                     background: 'rgb(237, 242, 247)',
                     cursor: 'pointer',
@@ -212,7 +212,7 @@ export default function Nav({ data }) {
             style={
               data.selectedUser.indexOf('adricham') !== -1
                 ? {
-                    outline: '4px solid orange',
+                    outline: '4px solid #C9CFFF',
                     padding: '1px',
                     background: 'rgb(237, 242, 247)',
                     cursor: 'pointer',
@@ -234,7 +234,7 @@ export default function Nav({ data }) {
             style={
               data.selectedUser.indexOf('yudarlinn') !== -1
                 ? {
-                    outline: '4px solid orange',
+                    outline: '4px solid #EEBEF5',
                     padding: '1px',
                     background: 'rgb(237, 242, 247)',
                     cursor: 'pointer',
@@ -256,7 +256,7 @@ export default function Nav({ data }) {
             style={
               data.selectedUser.indexOf('gofl2237') !== -1
                 ? {
-                    outline: '4px solid orange',
+                    outline: '4px solid #766E79',
                     padding: '1px',
                     background: 'rgb(237, 242, 247)',
                     cursor: 'pointer',
@@ -278,7 +278,7 @@ export default function Nav({ data }) {
             style={
               data.selectedUser.indexOf('jeeya0402') !== -1
                 ? {
-                    outline: '4px solid orange',
+                    outline: '4px solid #FBBBCA',
                     padding: '1px',
                     background: 'rgb(237, 242, 247)',
                     cursor: 'pointer',
@@ -300,7 +300,7 @@ export default function Nav({ data }) {
             style={
               data.selectedUser.indexOf('kimc6h12o6') !== -1
                 ? {
-                    outline: '4px solid orange',
+                    outline: '4px solid #C49CFD',
                     padding: '1px',
                     background: 'rgb(237, 242, 247)',
                     cursor: 'pointer',
@@ -323,7 +323,7 @@ export default function Nav({ data }) {
               style={
                 data.selectedUser.indexOf('nyangoooong') !== -1
                   ? {
-                      outline: '4px solid orange',
+                      outline: '4px solid #C49CFD',
                       padding: '1px',
                       background: 'rgb(237, 242, 247)',
                       cursor: 'pointer',
