@@ -99,7 +99,7 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                       size="lg"
                       style={{ display: 'flex' }}
                       colorScheme="purple"
-                      defaultValue={true}
+                      defaultValue={false}
                       isChecked={data.useSubCharacter}
                       onChange={() => {
                         const changeData = data.useSubCharacter
@@ -110,6 +110,27 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                           'setting-useSubCharacter',
                           changeData
                         );
+                      }}
+                    />
+                  </Flex>
+                  <Flex
+                    ml="6"
+                    mb="4"
+                    style={{ width: '100%' }}
+                    alignItems="center"
+                    justifyContent="space-between"
+                  >
+                    <Text fontSize="md">채팅창 가리기</Text>
+                    <Switch
+                      size="lg"
+                      style={{ display: 'flex' }}
+                      colorScheme="purple"
+                      defaultValue={false}
+                      isChecked={data.hideChat}
+                      onChange={() => {
+                        const changeData = data.hideChat ? 'false' : 'true';
+                        data.setHideChat(!data.hideChat);
+                        localStorage.setItem('setting-hideChat', changeData);
                       }}
                     />
                   </Flex>
