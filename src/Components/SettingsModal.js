@@ -172,10 +172,14 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                 <Text>
                   현재 버전 :{' '}
                   <Badge size="xl" colorScheme="gray">
-                    0.1.2
+                    0.1.3
                   </Badge>
                 </Text>
                 <br />
+                <Text>
+                  <Badge>0.1.3</Badge> 멤버별 테마색상 테두리 적용, 채팅창
+                  가리기 기능 추가 (2022.04.26)
+                </Text>
                 <Text>
                   <Badge>0.1.2</Badge> 생방송 API 호출 속도 개선, 부캐 보이기
                   기능 추가 (2022.04.26)
