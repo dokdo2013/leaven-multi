@@ -8,7 +8,8 @@ function App() {
   const [broadcastMember, setBroadcastMember] = useState(1);
   const [broadcastMemberList, setBroadcastMemberList] = useState([]);
   const [selectedUser, setSelectedUser] = useState([]);
-  const [useSubCharacter, setUseSubCharacter] = useState(true);
+  const [useSubCharacter, setUseSubCharacter] = useState(false);
+  const [hideChat, setHideChat] = useState(false);
 
   useEffect(() => {
     loadApi();
@@ -23,6 +24,13 @@ function App() {
       setUseSubCharacter(true);
     } else {
       setUseSubCharacter(false);
+    }
+
+    const localHideChat = localStorage.getItem('setting-hideChat');
+    if (localHideChat === 'true') {
+      setHideChat(true);
+    } else {
+      setHideChat(false);
     }
   };
 
@@ -48,9 +56,11 @@ function App() {
           broadcastMemberList,
           useSubCharacter,
           setUseSubCharacter,
+          hideChat,
+          setHideChat,
         }}
       ></Nav>
-      <Content data={{ selectedUser, broadcastMemberList }}></Content>
+      <Content data={{ selectedUser, broadcastMemberList, hideChat }}></Content>
     </ChakraProvider>
   );
 }
