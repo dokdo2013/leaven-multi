@@ -193,10 +193,13 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                 <Text>
                   현재 버전 :{' '}
                   <Badge size="xl" colorScheme="gray">
-                    0.1.3
+                    0.1.4
                   </Badge>
                 </Text>
                 <br />
+                <Text>
+                  <Badge>0.1.4</Badge> 구슬요 프로필 이미지 변경 (2022.04.27)
+                </Text>
                 <Text>
                   <Badge>0.1.3</Badge> 멤버별 테마색상 테두리 적용, 채팅창
                   가리기 기능 추가 (2022.04.26)
