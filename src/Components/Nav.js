@@ -115,7 +115,7 @@ export default function Nav({ data }) {
           <Avatar
             m={2}
             name="슬 요"
-            src="https://static-cdn.jtvnw.net/jtv_user_pictures/e659d2d7-1c77-4406-b48e-922b5898aa21-profile_image-50x50.png"
+            src="https://static-cdn.jtvnw.net/jtv_user_pictures/7b8156b3-961f-4798-94e3-ca91ef417210-profile_image-70x70.png"
             onClick={() => {
               changeSelect('beadyo97');
             }}
