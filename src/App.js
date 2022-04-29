@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ChakraProvider, theme } from '@chakra-ui/react';
 import Nav from './Components/Nav';
 import Content from './Components/Content';
+import ContentFull from './Components/ContentFull';
 import axios from 'axios';
 
 function App() {
@@ -10,9 +11,11 @@ function App() {
   const [selectedUser, setSelectedUser] = useState([]);
   const [useSubCharacter, setUseSubCharacter] = useState(false);
   const [hideChat, setHideChat] = useState(false);
+  const [videoChatTogether, setVideoChatTogether] = useState(false);
+  const [chatDarkMode, setChatDarkMode] = useState(false);
 
   useEffect(() => {
-    loadApi();
+    loadApi(true);
     loadStorage();
   }, []);
 
@@ -32,14 +35,30 @@ function App() {
     } else {
       setHideChat(false);
     }
+
+    const localVideoChatTogether = localStorage.getItem(
+      'setting-videoChatTogether'
+    );
+    if (localVideoChatTogether === 'true') {
+      setVideoChatTogether(true);
+    } else {
+      setVideoChatTogether(false);
+    }
+
+    const localChatDarkMode = localStorage.getItem('setting-chatDarkMode');
+    if (localChatDarkMode === 'true') {
+      setChatDarkMode(true);
+    } else {
+      setChatDarkMode(false);
+    }
   };
 
-  const loadApi = () => {
+  const loadApi = (isFirst = false) => {
     axios.get('https://api.c6h12o6.kr/leaven').then(Response => {
       console.log(Response.data);
       if (Response.data.code === 'SUCCESS') {
         setBroadcastMemberList(Response.data.data);
-        setSelectedUser(Response.data.data);
+        isFirst && setSelectedUser(Response.data.data);
       } else if (Response.data.code === 'DATA_EMPTY') {
         console.log('dd');
       }
@@ -58,9 +77,21 @@ function App() {
           setUseSubCharacter,
           hideChat,
           setHideChat,
+          videoChatTogether,
+          setVideoChatTogether,
+          chatDarkMode,
+          setChatDarkMode,
         }}
       ></Nav>
-      <Content data={{ selectedUser, broadcastMemberList, hideChat }}></Content>
+      {videoChatTogether ? (
+        <ContentFull
+          data={{ selectedUser, broadcastMemberList, hideChat, chatDarkMode }}
+        ></ContentFull>
+      ) : (
+        <Content
+          data={{ selectedUser, broadcastMemberList, hideChat, chatDarkMode }}
+        ></Content>
+      )}
     </ChakraProvider>
   );
 }
