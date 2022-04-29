@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Box,
-  Grid,
-  GridItem,
-  useColorModeValue,
-  Button,
-} from '@chakra-ui/react';
+import { Box, Grid, GridItem, useColorModeValue, Flex } from '@chakra-ui/react';
 import './button-style.css';
 
-export default function Content({ data }) {
+export default function ContentFull({ data }) {
   const [chatUser, setChatUser] = useState('');
 
   const changeNameToKor = name => {
@@ -98,23 +92,16 @@ export default function Content({ data }) {
   return (
     <Box
       minH="calc(100vh - 64px)"
-      bg={data.chatDarkMode ? 'gray.800' : 'gray.100'}
+      bg={useColorModeValue('gray.100', 'gray.900')}
       style={{ display: 'flex', justifyContent: 'space-between' }}
     >
       {data.selectedUser.length ? (
         <>
           <Box
-            style={
-              data.hideChat
-                ? {
-                    width: '100vw',
-                    height: 'calc(100vh - 64px)',
-                  }
-                : {
-                    width: 'calc(100vw - 310px)',
-                    height: 'calc(100vh - 64px)',
-                  }
-            }
+            style={{
+              width: '100vw',
+              height: 'calc(100vh - 64px)',
+            }}
           >
             <Grid
               templateRows={templateRows}
@@ -133,77 +120,40 @@ export default function Content({ data }) {
                         : 1
                     }
                   >
-                    <iframe
-                      title="embed"
-                      id={'embed_' + user}
-                      src={
-                        'https://player.twitch.tv/?muted=true&channel=' +
-                        user +
-                        '&parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team'
-                      }
-                      class="stream"
-                      allowFullScreen="true"
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                      }}
-                    ></iframe>
+                    <Flex style={{ height: '100%' }}>
+                      <iframe
+                        title="embed"
+                        id={'embed_' + user}
+                        src={
+                          'https://player.twitch.tv/?muted=true&channel=' +
+                          user +
+                          '&parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team'
+                        }
+                        class="stream"
+                        allowFullScreen="true"
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                        }}
+                      ></iframe>
+                      <iframe
+                        title="chat"
+                        scrolling="no"
+                        id={'chat-' + user + '-embed'}
+                        src={
+                          'https://twitch.tv/embed/' +
+                          user +
+                          '/chat?parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team'
+                        }
+                        width="340px"
+                        height="100%"
+                      ></iframe>
+                    </Flex>
                   </GridItem>
                 );
               })}
             </Grid>
           </Box>
-          {data.selectedUser.length !== 0 && !data.hideChat && (
-            <Box
-              style={{
-                height:
-                  'calc(100vh - ' +
-                  (data.selectedUser.length > 1 ? 94 : 64) +
-                  'px)',
-                width: '340px',
-              }}
-            >
-              {data.selectedUser.length > 1 && (
-                <Box style={{ height: '30px' }}>
-                  {data.selectedUser.map(user => {
-                    return (
-                      <Button
-                        h={30}
-                        size="xs"
-                        style={{ padding: '5px' }}
-                        colorScheme={
-                          chatUser === user
-                            ? 'teal'
-                            : data.chatDarkMode
-                            ? 'blackAlpha'
-                            : 'gray'
-                        }
-                        onClick={() => {
-                          setChatUser(user);
-                        }}
-                      >
-                        {changeNameToKor(user)}
-                      </Button>
-                    );
-                  })}
-                </Box>
-              )}
-              <iframe
-                title="chat"
-                scrolling="no"
-                id={'chat-' + chatUser + '-embed'}
-                src={
-                  'https://twitch.tv/embed/' +
-                  chatUser +
-                  (data.chatDarkMode
-                    ? '/chat?darkpopout&parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team'
-                    : '/chat?parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team')
-                }
-                height="100%"
-                width="100%"
-              ></iframe>
-            </Box>
-          )}
         </>
       ) : (
         <Box
