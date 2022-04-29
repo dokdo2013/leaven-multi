@@ -211,6 +211,11 @@ const LinkTabs = () => {
             linkName="Twitch (트위치)"
           />
           <Panel
+            icon="twitch"
+            link="https://twitch.tv/kiwi4381"
+            linkName="Kiwi4381 Twitch (키위골드 트위치)"
+          />
+          <Panel
             icon="youtube"
             link="https://www.youtube.com/channel/UC3DKjVJOKMgaCv8DvvSOJRw"
             linkName="Youtube (유튜브)"
@@ -380,6 +385,11 @@ const LinkTabs = () => {
             icon="twitch"
             link="https://twitch.tv/kimc6h12o6"
             linkName="Twitch (트위치)"
+          />
+          <Panel
+            icon="twitch"
+            link="https://twitch.tv/nyangoooong"
+            linkName="Nyangoooong Twitch (권냥냥 트위치)"
           />
           <Panel
             icon="youtube"
