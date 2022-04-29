@@ -186,17 +186,72 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                   유발할 수 있으며, 예고없이 추가/삭제 될 수 있습니다.
                 </Alert>
                 <Text mt="6" align="center">
-                  현재 이용 가능한 기능이 없습니다.
+                  {/* 현재 이용 가능한 기능이 없습니다. */}
+                  <Flex
+                    mb="4"
+                    style={{ width: '100%' }}
+                    alignItems="center"
+                    justifyContent="space-between"
+                  >
+                    <Text fontSize="md">
+                      방송과 채팅 함께 보기 (와이드 스크린 권장)
+                    </Text>
+                    <Switch
+                      size="lg"
+                      style={{ display: 'flex' }}
+                      colorScheme="purple"
+                      defaultValue={false}
+                      isChecked={data.videoChatTogether}
+                      onChange={() => {
+                        const changeData = data.videoChatTogether
+                          ? 'false'
+                          : 'true';
+                        data.setVideoChatTogether(!data.videoChatTogether);
+                        localStorage.setItem(
+                          'setting-videoChatTogether',
+                          changeData
+                        );
+                      }}
+                    />
+                  </Flex>
+                  <Flex
+                    mb="4"
+                    style={{ width: '100%' }}
+                    alignItems="center"
+                    justifyContent="space-between"
+                  >
+                    <Text fontSize="md">다크모드</Text>
+                    <Switch
+                      size="lg"
+                      style={{ display: 'flex' }}
+                      colorScheme="purple"
+                      defaultValue={false}
+                      isChecked={data.chatDarkMode}
+                      onChange={() => {
+                        const changeData = data.chatDarkMode ? 'false' : 'true';
+                        data.setChatDarkMode(!data.chatDarkMode);
+                        localStorage.setItem(
+                          'setting-chatDarkMode',
+                          changeData
+                        );
+                      }}
+                    />
+                  </Flex>
                 </Text>
               </TabPanel>
               <TabPanel>
                 <Text>
                   현재 버전 :{' '}
                   <Badge size="xl" colorScheme="gray">
-                    0.1.4
+                    0.1.5
                   </Badge>
                 </Text>
                 <br />
+                <Text>
+                  <Badge>0.1.5</Badge> 멤버 아이콘에 툴팁 추가, 구나구나
+                  아이콘에 마우스 올려도 마우스 모양 바뀌지 않던 오류 수정, 링크
+                  모달에 키위골드와 권냥냥 추가 (2022.04.29)
+                </Text>
                 <Text>
                   <Badge>0.1.4</Badge> 구슬요 프로필 이미지 변경 (2022.04.27)
                 </Text>
