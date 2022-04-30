@@ -21,3 +21,7 @@ body, #main {
 #image-grid-wrapper img {
   cursor: pointer;
 }
+
+.color-selected {
+  outline: gray solid 3px !important;
+}
