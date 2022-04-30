@@ -4,6 +4,7 @@ import Nav from './Components/Nav';
 import Content from './Components/Content';
 import ContentFull from './Components/ContentFull';
 import axios from 'axios';
+import * as Sentry from '@sentry/react';
 
 function App() {
   const [broadcastMember, setBroadcastMember] = useState(1);
@@ -54,15 +55,19 @@ function App() {
   };
 
   const loadApi = (isFirst = false) => {
-    axios.get('https://api.c6h12o6.kr/leaven').then(Response => {
-      console.log(Response.data);
-      if (Response.data.code === 'SUCCESS') {
-        setBroadcastMemberList(Response.data.data);
-        isFirst && setSelectedUser(Response.data.data);
-      } else if (Response.data.code === 'DATA_EMPTY') {
-        console.log('dd');
-      }
-    });
+    axios.get('https://api.c6h12o6.kr/leaven')
+      .then(Response => {
+        console.log(Response.data);
+        if (Response.data.code === 'SUCCESS') {
+          setBroadcastMemberList(Response.data.data);
+          isFirst && setSelectedUser(Response.data.data);
+        } else if (Response.data.code === 'DATA_EMPTY') {
+          console.log('dd');
+        }
+      })
+      .catch(e => {
+        Sentry.captureException(e);
+      });
   };
 
   return (
