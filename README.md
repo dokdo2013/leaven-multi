@@ -26,8 +26,4 @@ yarn start
 ```bash
 yarn build
 ```
-- 배포 : Github Webhook to Jenkins (Build & Deploy to S3)
-
-### Dev Branch
-[https://dev-multi.leaven.team](https://dev-multi.leaven.team) : Develop 브랜치에 푸시하면 젠킨스에서 빌드되어 반영됨. 릴리즈 전 테스트 용도로 활용
-
+- 배포 : Cloudflare Pages (Branch별 Release 포함)
