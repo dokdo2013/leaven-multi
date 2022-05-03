@@ -1,4 +1,6 @@
 # LEAVEN Multi Twitch
+![카페타이틀](https://user-images.githubusercontent.com/22076477/165910860-f5ccc467-1107-4b65-a1df-017371d87dfb.jpeg)
+
 트위치/유튜브 커버츄얼 팀 '레븐(LEAVEN)' 멤버별 방송을 동시에 시청할 수 있는 멀티 트위치 웹사이트 ([https://multi.leaven.team](https://multi.leaven.team))
 
 ## 제작동기
@@ -24,5 +26,4 @@ yarn start
 ```bash
 yarn build
 ```
-- 배포 : Github Webhook to Jenkins (Build & Deploy to S3)
-
+- 배포 : Cloudflare Pages (Branch별 Release 포함)

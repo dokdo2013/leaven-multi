@@ -243,10 +243,14 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                 <Text>
                   현재 버전 :{' '}
                   <Badge size="xl" colorScheme="gray">
-                    0.1.5
+                    0.1.6
                   </Badge>
                 </Text>
                 <br />
+                <Text>
+                  <Badge>0.1.6</Badge> 상단 Navigation Bar 프로필 이미지를
+                  대모님 이미지로 변경, 이미지 CDN 교체 (2022.05.03)
+                </Text>
                 <Text>
                   <Badge>0.1.5</Badge> 멤버 아이콘에 툴팁 추가, 구나구나
                   아이콘에 마우스 올려도 마우스 모양 바뀌지 않던 오류 수정, 링크
