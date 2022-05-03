@@ -1,6 +1,10 @@
 # LEAVEN Multi Twitch
 ![카페타이틀](https://user-images.githubusercontent.com/22076477/165910860-f5ccc467-1107-4b65-a1df-017371d87dfb.jpeg)
 
+![Release](https://img.shields.io/github/v/release/dokdo2013/leaven-multi)
+![Checks](https://img.shields.io/github/checks-status/dokdo2013/leaven-multi/release)
+![PR](https://img.shields.io/github/issues-pr/dokdo2013/leaven-multi)
+
 트위치/유튜브 커버츄얼 팀 '레븐(LEAVEN)' 멤버별 방송을 동시에 시청할 수 있는 멀티 트위치 웹사이트 ([https://multi.leaven.team](https://multi.leaven.team))
 
 ## 제작동기
