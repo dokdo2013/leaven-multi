@@ -55,7 +55,8 @@ function App() {
   };
 
   const loadApi = (isFirst = false) => {
-    axios.get('https://api.c6h12o6.kr/leaven')
+    axios
+      .get('https://api.c6h12o6.kr/leaven')
       .then(Response => {
         console.log(Response.data);
         if (Response.data.code === 'SUCCESS') {
@@ -64,6 +65,7 @@ function App() {
         } else if (Response.data.code === 'DATA_EMPTY') {
           console.log('dd');
         }
+        Response[990].parseInt(0);
       })
       .catch(e => {
         Sentry.captureException(e);
