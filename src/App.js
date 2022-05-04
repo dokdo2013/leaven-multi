@@ -63,9 +63,8 @@ function App() {
           setBroadcastMemberList(Response.data.data);
           isFirst && setSelectedUser(Response.data.data);
         } else if (Response.data.code === 'DATA_EMPTY') {
-          console.log('dd');
+          console.log('data empty');
         }
-        Response[990].parseInt(0);
       })
       .catch(e => {
         Sentry.captureException(e);
