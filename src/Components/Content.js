@@ -145,7 +145,7 @@ export default function Content({ data }) {
                       src={
                         'https://player.twitch.tv/?muted=true&channel=' +
                         user +
-                        '&parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team'
+                        '&parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team&parent=rust.leaven.team'
                       }
                       class="stream"
                       allowFullScreen="true"
@@ -202,8 +202,8 @@ export default function Content({ data }) {
                   'https://twitch.tv/embed/' +
                   chatUser +
                   (data.chatDarkMode
-                    ? '/chat?darkpopout&parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team'
-                    : '/chat?parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team')
+                    ? '/chat?darkpopout&parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team&parent=rust.leaven.team'
+                    : '/chat?parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team&parent=rust.leaven.team')
                 }
                 height="100%"
                 width="100%"

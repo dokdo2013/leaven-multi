@@ -133,7 +133,7 @@ export default function ContentFull({ data }) {
                         src={
                           'https://player.twitch.tv/?muted=true&channel=' +
                           user +
-                          '&parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team'
+                          '&parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team&parent=rust.leaven.team'
                         }
                         class="stream"
                         allowFullScreen="true"
@@ -149,7 +149,7 @@ export default function ContentFull({ data }) {
                         src={
                           'https://twitch.tv/embed/' +
                           user +
-                          '/chat?parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team'
+                          '/chat?parent=localhost&parent=multi.leaven.team&parent=dev-multi.leaven.team&parent=rust.leaven.team'
                         }
                         width="340px"
                         height="100%"

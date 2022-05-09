@@ -51,7 +51,6 @@ export default function Nav({ data }) {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          minWidth: '200px',
         }}
       >
         <LinkModal isOpen={linkIsOpen} onClose={linkOnClose} />
@@ -60,7 +59,7 @@ export default function Nav({ data }) {
           onClose={settingsOnClose}
           data={data}
         />
-        <Flex alignItems="center">
+        <Flex alignItems="center" style={{minWidth: '200px'}}>
           <Image src="../../leaven.png" h={12} />
           <Badge
             colorScheme={data.chatDarkMode ? 'whiteAlpha' : 'blackAlpha'}
