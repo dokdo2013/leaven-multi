@@ -1,4 +1,4 @@
-# LEAVEN Multi Twitch
+# [RUST VERSION] LEAVEN Multi Twitch
 ![카페타이틀](https://user-images.githubusercontent.com/22076477/165910860-f5ccc467-1107-4b65-a1df-017371d87dfb.jpeg)
 
 ![Release](https://img.shields.io/github/v/release/dokdo2013/leaven-multi)
@@ -6,6 +6,7 @@
 ![PR](https://img.shields.io/github/issues-pr/dokdo2013/leaven-multi)
 
 트위치/유튜브 커버츄얼 팀 '레븐(LEAVEN)' 멤버별 방송을 동시에 시청할 수 있는 멀티 트위치 웹사이트 ([https://multi.leaven.team](https://multi.leaven.team))
+RUST VERSION
 
 ## 제작동기
 기존 멀티트위치 사이트들(멀티트위치, 멀티스트림 등)은 멤버 10명 방송을 쉽게 선택해서 볼 수 없었고, UI/UX 면에서 비효율적인 부분이 있어 이를 개선하기 위해 별도 사이트로 제작했다.

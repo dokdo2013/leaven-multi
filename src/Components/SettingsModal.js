@@ -33,86 +33,18 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
         <ModalBody>
           <Tabs variant="soft-rounded" size="sm" colorScheme="purple">
             <TabList flexWrap="wrap">
-              <Tab>Grid 설정</Tab>
               <Tab>설정</Tab>
               <Tab>실험실 (Beta)</Tab>
-              <Tab>업데이트 기록</Tab>
               <Tab>쿠키 정책</Tab>
               <Tab>정보</Tab>
             </TabList>
             <Divider mt={2}></Divider>
             <TabPanels>
               <TabPanel>
-                <Text mt="6" align="center">
-                  Grid 기능 제공 준비 중입니다.
-                </Text>
-
-                {/* <Flex
-                  style={{
-                    backgroundColor: '',
-                    width: '100px',
-                    height: '100px',
-                  }}
-                >
-                  <Flex
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      margin: '10%',
-                      backgroundColor: 'lightgrey',
-                    }}
-                  ></Flex>
-
-                  <Flex
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      margin: '10%',
-                      backgroundColor: 'lightgrey',
-                    }}
-                  ></Flex>
-
-                  <Flex
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      margin: '10%',
-                      backgroundColor: 'lightgrey',
-                    }}
-                  ></Flex>
-                </Flex> */}
-              </TabPanel>
-              <TabPanel>
                 <Text fontSize="lg" fontWeight="bold" mb="4">
                   기본 기능
                 </Text>
                 <Flex flexWrap="wrap">
-                  <Flex
-                    ml="6"
-                    mb="4"
-                    style={{ width: '100%' }}
-                    alignItems="center"
-                    justifyContent="space-between"
-                  >
-                    <Text fontSize="md">부캐 보이기 (키위골드, 권냥냥)</Text>
-                    <Switch
-                      size="lg"
-                      style={{ display: 'flex' }}
-                      colorScheme="purple"
-                      defaultValue={false}
-                      isChecked={data.useSubCharacter}
-                      onChange={() => {
-                        const changeData = data.useSubCharacter
-                          ? 'false'
-                          : 'true';
-                        data.setUseSubCharacter(!data.useSubCharacter);
-                        localStorage.setItem(
-                          'setting-useSubCharacter',
-                          changeData
-                        );
-                      }}
-                    />
-                  </Flex>
                   <Flex
                     ml="6"
                     mb="4"
@@ -134,49 +66,7 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                       }}
                     />
                   </Flex>
-                  {/* <Flex
-                    ml="6"
-                    mb="4"
-                    style={{ width: '100%' }}
-                    alignItems="center"
-                    justifyContent="space-between"
-                  >
-                    <Text fontSize="md">
-                      멤버별 선택시 테두리 테마색상으로 설정
-                    </Text>
-                    <Switch
-                      size="lg"
-                      style={{ display: 'flex' }}
-                      colorScheme="purple"
-                      defaultValue={true}
-                      // isChecked={parseInt(data.useCopy) === 1}
-                      onChange={() => {
-                        // const changeData = data.useCopy === 1 ? 0 : 1;
-                        // data.setUseCopy(changeData);
-                        // localStorage.setItem('setting_use_copy', changeData);
-                        // changeSuccess();
-                      }}
-                    />
-                  </Flex> */}
                 </Flex>
-                {/* <Text fontSize="lg" fontWeight="bold" mb="4" mt="4">
-                  테마 색상 설정
-                </Text>
-                <Flex flexWrap="wrap" ml="6">
-                  <Button
-                    mr={3}
-                    className="color-selected"
-                    colorScheme="blue"
-                  ></Button>
-                  <Button mr={3} colorScheme="gray"></Button>
-                  <Button mr={3} colorScheme="green"></Button>
-                  <Button mr={3} colorScheme="yellow"></Button>
-                  <Button mr={3} colorScheme="orange"></Button>
-                  <Button mr={3} colorScheme="red"></Button>
-                  <Button mr={3} colorScheme="cyan"></Button>
-                  <Button mr={3} colorScheme="purple"></Button>
-                  <Button mr={3} colorScheme="pink"></Button>
-                </Flex> */}
               </TabPanel>
               <TabPanel>
                 <Alert status="warning" fontSize="sm">
@@ -240,43 +130,6 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                 </Text>
               </TabPanel>
               <TabPanel>
-                <Text>
-                  현재 버전 :{' '}
-                  <Badge size="xl" colorScheme="gray">
-                    0.1.6
-                  </Badge>
-                </Text>
-                <br />
-                <Text>
-                  <Badge>0.1.6</Badge> 상단 Navigation Bar 프로필 이미지를
-                  대모님 이미지로 변경, 이미지 CDN 교체 (2022.05.03)
-                </Text>
-                <Text>
-                  <Badge>0.1.5</Badge> 멤버 아이콘에 툴팁 추가, 구나구나
-                  아이콘에 마우스 올려도 마우스 모양 바뀌지 않던 오류 수정, 링크
-                  모달에 키위골드와 권냥냥 추가 (2022.04.29)
-                </Text>
-                <Text>
-                  <Badge>0.1.4</Badge> 구슬요 프로필 이미지 변경 (2022.04.27)
-                </Text>
-                <Text>
-                  <Badge>0.1.3</Badge> 멤버별 테마색상 테두리 적용, 채팅창
-                  가리기 기능 추가 (2022.04.26)
-                </Text>
-                <Text>
-                  <Badge>0.1.2</Badge> 생방송 API 호출 속도 개선, 부캐 보이기
-                  기능 추가 (2022.04.26)
-                </Text>
-                <Text>
-                  <Badge>0.1.1</Badge> 상단 Navigation Bar 기능 추가
-                  (2022.04.23)
-                </Text>
-                <Text>
-                  <Badge>0.1.0</Badge> 최초 공개 (2022.04.21)
-                </Text>
-                <br />
-              </TabPanel>
-              <TabPanel>
                 <Text fontSize="xl" fontWeight="bold">
                   개인정보 자동수집 장치의 설치, 운영 및 그 거부에 관한 사항
                 </Text>
@@ -336,6 +189,10 @@ const SettingsModal = ({ isOpen, onClose, data }) => {
                 </Text>
               </TabPanel>
               <TabPanel>
+                <Text fontSize="lg" fontWeight="semibold">
+                  LEAVEN RUST MULTI - RUST 스트리머 서버 운영 기간동안 레븐 멤버 소속팀의 시청편의를 위해 멀티 트위치 페이지를 제공 중입니다.
+                </Text>
+                <br />
                 <Text fontSize="lg" fontWeight="semibold">
                   Developed By
                 </Text>

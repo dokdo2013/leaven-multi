@@ -37,6 +37,12 @@ export default function Content({ data }) {
         return '도당';
       case 'nyangoooong':
         return '권냥';
+      case '84km':
+        return '품사';
+      case 'ssomha_':
+        return '솜하';
+      case 'mge0317':
+        return '망극';
       default:
         return '';
     }
