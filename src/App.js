@@ -56,7 +56,7 @@ function App() {
 
   const loadApi = (isFirst = false) => {
     axios
-      .get('https://api.c6h12o6.kr/leaven')
+      .get('https://api-v1.leaven.team/live')
       .then(Response => {
         console.log(Response.data);
         if (Response.data.code === 'SUCCESS') {
