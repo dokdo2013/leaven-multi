@@ -5,8 +5,8 @@
   "dependencies": {
     "@chakra-ui/icons": "1.1.7",
     "@chakra-ui/react": "1.8.9",
-    "@sentry/react": "7.19.0",
-    "@sentry/tracing": "7.19.0",
+    "@sentry/react": "7.20.0",
+    "@sentry/tracing": "7.20.0",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
     "@testing-library/jest-dom": "5.16.5",
